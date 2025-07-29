@@ -27,7 +27,7 @@ const puppeteer = require('puppeteer');  // Импорт Puppeteer
 
     await new Promise(resolve => setTimeout(resolve, 3000));
     // Скриншот
-    await page.screenshot({ path: 'delayed-screenshot.png', fullPage: true });
+    await page.screenshot({ path: 'delayed-screenshot.png', fullPage: true });  // path для каждого скриншота нужно менять имя, иначе не будет сохранять
 
     await new Promise(resolve => setTimeout(resolve, 3000));
 
