@@ -20,14 +20,15 @@ const puppeteer = require('puppeteer');  // Импорт Puppeteer
     const page = await browser.newPage();  // Запуск браузера
     await page.goto('https://a101-shop-front-specstorea-355.ktsdev.ru/?platform=stand', { waitUntil: 'networkidle2' });  // Открытие сайта с параметром ожидания
 
-    await new Promise(resolve => setTimeout(resolve, 5000));  // Ожидание 3 секунды
+    await new Promise(resolve => setTimeout(resolve, 5000));  // Ожидание для стабильности
 
-    // Клик по полю ввода. Используется CSS селектор
+    // Клик по кнопке корзины. Используется CSS селектор (скопировал прямо из dom, не писал сам)
     await page.click('#root > div.eRdLFkQ6t3M\\= > div > div > div.X3RIOxB4Hfw\\=.hnvkvWHmDgE\\= > div.bElX2h-X9oE\\= > button');
 
     await new Promise(resolve => setTimeout(resolve, 5000));
+
     // Скриншот
-    await page.screenshot({ path: 'delayed-screenshot_product_cart.png', fullPage: true });  // path для каждого скриншота нужно менять имя, иначе не будет сохранять
+    await page.screenshot({ path: 'delayed-screenshot_product_cart.png', fullPage: true });  // path для каждого скриншота нужно менять имя или удалять старые, иначе не будет сохранять
 
     await new Promise(resolve => setTimeout(resolve, 5000));
 
